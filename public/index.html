@@ -4,52 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="http://localhost:1000/t/:product/:style/styles.css">
+    <link rel="stylesheet" href="https://www.nike.com/assets/ncss/glyphs/2.5/css/glyphs.min.css">
     <title>Nike Product Page</title>
 </head>
 <body>
-    <nav class="ncss-container bg-white">
-        <section class="d-sm-h d-lg-b">
-            <div class="l-member-header border-nav-bottom bg-white ncss-row">
-                <div class="ncss-col-sm-12 prl0-sm">
-                    <ul class="fl-sm-l d-sm-ib">
-                        <li class="border-nav-right d-sm-ib va-sm-t">
-                            <a href="https://www.nike.com/membership" class="prl7-sm pt2-sm pb2-sm nav-color-grey fs12-nav-sm d-sm-b" target="_self">
-                                Join Us
-                            </a>
-                        </li>
-                        <li class="border-nav-right d-sm-ib va-sm-t">
-                            <a href="https://www.nike.com/jordan" class="prl7-sm pt2-sm pb2-sm nav-color-grey fs12-nav-sm d-sm-b" target="_self">
-                                <i class="">
 
-                                </i>
-                            </a>
-                        </li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <section>
-
-        </section>
-    </nav>
-
-
-
-
-
-
-
-    <div id="Description"></div>
-
+    <div id="root"></div>
 
 
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="http://localhost:1000/t/:product/:style/dist/bundle.js"></script>
     <script src="http://localhost:5000/t/:product/:style/dist/bundle.js"></script>
-    
-    
+
     <script>
         var path = window.location.pathname.split('/');
         var productId = path[2]; 

@@ -23,6 +23,9 @@ a {
     font-weight: 500;
 }
 
+
+
+
 [class*=ncss-col-] {
     position: relative;
     min-height: 1px;
@@ -41,10 +44,6 @@ a {
 }
 
 
-/* COLORS */
-.bg-white {
-    background-color: #fff;
-}
 
 
 
@@ -157,6 +156,10 @@ a {
 /*///////////*/
 .nb268 .nav-color-grey {
     color: #757575;
+}
+
+.bg-white {
+    background-color: #fff;
 }
 
 /*//////////////////////////*/
