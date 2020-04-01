@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://www.nike.com/assets/ncss/glyphs/2.5/css/glyphs.min.css">
+    <title>Nike Product Page</title>
+</head>
+<body>
+
+    <div id="root"></div>
+
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="http://localhost:5000/t/:product/:style/dist/bundle.js"></script>
+    
+    <script src="http://localhost:1000/t/:product/:style/dist/bundle.js"></script>
+    <script src="http://localhost:2000/bundle.js"></script>
+
+    <script>
+        var path = window.location.pathname.split('/');
+        var productId = path[2]; 
+        var styleId = path[3]; 
+
+        ReactDOM.render(
+            React.createElement(Description, { productId }),
+            document.getElementById('Description')
+        )
+    </script>
+    
+</body>
+</html>
