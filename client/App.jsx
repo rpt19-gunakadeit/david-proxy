@@ -4,26 +4,12 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            productId: 1,
+            productId: this.props.productId,
+            styleId: this.props.styleId,
             num: 1
         }
     }
 
-    componentDidMount() {
-        var path = window.location.pathname.split('/');
-        var productId = path[2]; 
-        var styleId = path[3]; 
-
-        this.setState({
-            productId
-        })
-    }
-
-    test() {
-        this.setState({
-            num: ++this.state.num
-        })
-    }
 
     render() {
         return (
@@ -62,7 +48,7 @@ class App extends React.Component {
 
                                 <ul className="fl-sm-r d-sm-ib pr5-sm">
                                     <li className="d-sm-ib va-sm-m">
-                                        <button class="nav-btn p0-sm prl3-sm pt2-sm pb2-sm fs12-nav-sm d-sm-b nav-color-grey" target="_self">
+                                        <button className="nav-btn p0-sm prl3-sm pt2-sm pb2-sm fs12-nav-sm d-sm-b nav-color-grey" target="_self">
                                             <span>Join/Log In To Nike Member Profile</span>
                                         </button>
                                     </li>
@@ -99,38 +85,38 @@ class App extends React.Component {
                     <section className="d-sm-b">
                         <div className="l-nav ncss-row border-nav-bottom">
                             
-                            <div class="l-nav-brand">
-                                <a href="https://www.nike.com" class="prl5-sm pt3-sm pb3-sm d-sm-ib fs24-nav-sm fs28-nav-lg">
-                                    <i class="g72-swoosh"></i>
+                            <div className="l-nav-brand">
+                                <a href="https://www.nike.com" className="prl5-sm pt3-sm pb3-sm d-sm-ib fs24-nav-sm fs28-nav-lg">
+                                    <i className="g72-swoosh"></i>
                                 </a>
                             </div>
                             <div>
                             </div>
 
-                            <div class="d-lg-b d-sm-h">
-                                <ul class="ta-sm-c">
-                                    <li class="d-sm-ib">
-                                        <a class="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/w/new-3n82y">New Releases</a>
+                            <div className="d-lg-b d-sm-h">
+                                <ul className="ta-sm-c">
+                                    <li className="d-sm-ib">
+                                        <a className="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/w/new-3n82y">New Releases</a>
                                     </li>
-                                    <li class="d-sm-ib">
-                                        <a class="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/men">Men</a>
+                                    <li className="d-sm-ib">
+                                        <a className="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/men">Men</a>
                                     </li>
-                                    <li class="d-sm-ib">
-                                        <a class="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/women">Women</a>
+                                    <li className="d-sm-ib">
+                                        <a className="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/women">Women</a>
                                     </li>
-                                    <li class="d-sm-ib">
-                                        <a class="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/kids">Kids</a>
+                                    <li className="d-sm-ib">
+                                        <a className="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/kids">Kids</a>
                                     </li>
-                                    <li class="d-sm-ib">
-                                        <a class="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/nike-by-you">Customize</a>
+                                    <li className="d-sm-ib">
+                                        <a className="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/nike-by-you">Customize</a>
                                     </li>
-                                    <li class="d-sm-ib">
-                                        <a class="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/kids">Sale</a>
+                                    <li className="d-sm-ib">
+                                        <a className="nav-brand fs16-nav-sm prl5-sm pt6-sm pb6-sm nav-uppercase d-sm-ib va-sm-m" href="https://www.nike.com/kids">Sale</a>
                                     </li>
                                 </ul>
                             </div>
 
-                            <div class=".l-nav-search">
+                            <div className=".l-nav-search">
                                 <div></div>
                             </div>
                         </div>
@@ -138,18 +124,48 @@ class App extends React.Component {
 
 
                 </nav>
-                <div class="css-5x88d2 css-l8ohx9">
-                    <div class="">
 
+
+                <div className="css-5x88d2 css-l8ohx9">
+                    <div className="css-1lvkqmp">
+                        <div id="app">
+                            
+                        </div>
+                    </div>
+
+                    <div className="css-rfq3p1 css-1kealuy">
+                        <div className="pt4-sm prl6-sm prl0-lg">
+                            <Description test={this.test.bind(this)} productId={this.state.productId}/>
+                        </div>
+                        
+                        
+
+                        
+                        <div id="reviews-service"></div>
                     </div>
 
                 </div>
 
-                <Description test={this.test.bind(this)} productId={this.state.productId}/>
-                {/* <div id="Description"></div> */}
+                
 
-                <div id="test">{this.state.num}</div>
-                <div id="reviews-service"></div>
+                
+
+
+                
+                
+            
+
+
+
+
+            
+                <footer className="l-footer bg-black">
+                    <div className="ncss-container nav-fixed-fluid prl5-md pt5-sm pt10-md pb0-md prl10-lg">a</div>
+                </footer>
+            
+            
+            
+            
             </div>
         )
     }

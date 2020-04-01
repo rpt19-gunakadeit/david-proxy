@@ -1,7 +1,11 @@
 html {
     font-size: 16px;
     line-height: 1.75px;
+    
 }
+
+
+
 
 * {
     box-sizing: border-box;
@@ -14,6 +18,10 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -112,6 +120,8 @@ a {
 /*///////////*/
 /*  PADDING  */
 /*///////////*/
+
+
 .p0-sm {
     padding-top: 0;
 }
@@ -122,6 +132,11 @@ a {
 
 .pr5-sm {
     padding-right: 20px;
+}
+
+.prl0-sm {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .prl3-sm {
@@ -139,14 +154,28 @@ a {
     padding-left: 20px;
 }
 
-.prl0-sm {
-    padding-right: 0;
-    padding-left: 0;
+@media only screen and (min-width: 640px) {
+    .prl5-md {
+        padding-right: 20px;
+        padding-right: 20px;
+    }
+}
+
+.prl6-sm {
+    padding-right: 24px;
+    padding-left: 24px;
 }
 
 .prl7-sm {
     padding-right: 28px;
     padding-left: 28px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .prl10-lg {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 
 .pt2-sm {
@@ -157,8 +186,28 @@ a {
     padding-top: 12px;
 }
 
+.pt4-sm {
+    padding-top: 16px;
+}
+
+.pt5-sm {
+    padding-top: 20px;
+}
+
 .pt6-sm {
     padding-top: 24px;
+}
+
+@media only screen and (min-width: 640px) {
+    .pt10-md {
+        padding-top: 40px;
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    .pb0-md {
+        padding-bottom: 0;
+    }
 }
 
 .pb2-sm {
@@ -172,6 +221,14 @@ a {
 .pb6-sm {
     padding-bottom: 24px;
 }
+
+@media only screen and (min-width: 1024px) {
+    .prl0-lg {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
 
 
 /*///////////*/
@@ -221,6 +278,10 @@ a {
 .cart-icon {
     color: #757575;
     padding: 8px 10px;
+}
+
+.bg-black {
+    background-color: #111;
 }
 /*//////////////////////////*/
 /*  FONT SIZE/LINE HEIGHT   */
@@ -299,6 +360,10 @@ a {
     top: 15px;
 }
 
+
+
+
+
 .css-5x88d2 {
     max-width: 1440px;
     margin: 0px auto;
@@ -308,4 +373,40 @@ a {
     .css-l8ohx9 {
         display: flex;
     }
+}
+
+.css-1lvkqmp {
+    flex: 3 1 0%;
+    border: 1px solid black;
+}
+
+
+
+.css-rfq3p1 {
+    flex: 1 1 0%;
+    border: 1px solid black;
+}
+
+@media (min-width: 1025px) {
+    .css-1kealuy {
+        width: 456px;
+    }
+}
+
+
+
+
+
+/* footer */
+@media only screen and (min-width: 640px) {
+    .l-footer {
+        min-height: 200px;
+    }
+}
+
+.ncss-container.nav-fixed-fluid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    border: 1px solid white;
 }
