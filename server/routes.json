@@ -1,0 +1,8 @@
+{
+    "routes": [
+        {
+            "route": "/t",
+            "address":"http://localhost:1000"
+        }
+    ]
+}
