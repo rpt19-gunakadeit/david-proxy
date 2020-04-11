@@ -7,7 +7,7 @@ module.exports = {
     //devtool: 'none', 
     entry: `${SRC_DIR}/index.js`,
     output: {
-        filename: 'bbb.js',
+        filename: 'bundle.js',
         path: DIST_DIR,
     },
     module: {
