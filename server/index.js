@@ -9,7 +9,7 @@ app.use((req, res, next) => {
 app.use('/t/:product/:style', express.static('./public'));
 
 app.use('/exp', (req, res) => {
-    res.end('Hello World');
+    res.end('Lets try this out');
 })
 
 app.listen(1000, (err) => {
