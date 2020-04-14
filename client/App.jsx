@@ -137,7 +137,8 @@ class App extends React.Component {
                         <div className="pt4-sm prl6-sm prl0-lg">
                             {/* <p>Description</p> */}
                             {/* <Description test={this.test.bind(this)} productId={this.state.productId}/> */}
-                            <Description />
+                            <Description 
+                                productId={this.state.productId}/>
                         </div>
                         
                         
