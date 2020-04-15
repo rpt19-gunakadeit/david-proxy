@@ -9,12 +9,14 @@
   },
   "scripts": {
     "start": "nodemon server",
+    "startpm2": "pm2 start server",
     "build": "webpack -d --watch"
   },
   "dependencies": {
     "express": "^4.17.1",
     "http-proxy-middleware": "^1.0.3",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "pm2": "^4.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
