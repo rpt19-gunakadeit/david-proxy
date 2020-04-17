@@ -46,7 +46,7 @@ var modifyFiles = (grunt) => {
 
         reb_webpack = reb_webpack.replace("'./client/components/reviews.jsx'", "path.join(__dirname, './client/components/reviews.jsx')");
 
-        reb_webpack = reb_webpack.replace("'./client/components/shippingReturns.jsx'", "path.join(__dirname, '.client/components/shippingReturns.jsx')");
+        reb_webpack = reb_webpack.replace("'./client/components/shippingReturns.jsx'", "path.join(__dirname, './client/components/shippingReturns.jsx')");
 
         grunt.file.write(reb_webpack_path, reb_webpack);
 }
