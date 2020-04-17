@@ -1,11 +1,11 @@
 const proxy_webpackConfig = require('./webpack.config');
 const david_webpackConfig = require('./../david-service/webpack.config');
 const rebekah_webpackConfig = require('./../Rebekah-Reviews-service/webpack.config');
-const gruntTest = require('./test');
+const modifyFiles = require('./grunthelper');
 
 module.exports = function(grunt) {
     grunt.initConfig({
-        aws: grunt.file.readJSON('aws-keys.json'),
+        aws: grunt.file.readJSON('./../aws-keys.json'),
 
         aws_s3: {
             options: {
@@ -39,12 +39,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-aws-s3');
     grunt.loadNpmTasks('grunt-webpack');
 
-    grunt.registerTask('default', 'running exp', function() {
-        grunt.log.writeln('currently running exp');
-        var code = grunt.file.read('code.js');
-        grunt.log.writeln(code);
-        code += 5678;
-        grunt.file.write('code.js', code);
+    grunt.registerTask('default', 'modify,bundle,upload', function() {
+        //MODIFY THE FILES
+        modifyFiles(grunt);
 
         grunt.task.run(['webpack','aws_s3'])
     })
