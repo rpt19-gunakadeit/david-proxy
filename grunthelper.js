@@ -44,9 +44,9 @@ var modifyFiles = (grunt) => {
         
         var reb_webpack = grunt.file.read(reb_webpack_path);
 
-        reb_webpack = reb_webpack.replace("'./client/components/reviews.jsx'", "path.join(__dirname, './client/components/reviews.jsx')");
+        reb_webpack = reb_webpack.replace("'./client/components/reviews.jsx'", "path.join(__dirname, '../Rebekah-Reviews-service/client/components/reviews.jsx')");
 
-        reb_webpack = reb_webpack.replace("'./client/components/shippingReturns.jsx'", "path.join(__dirname, './client/components/shippingReturns.jsx')");
+        reb_webpack = reb_webpack.replace("'./client/components/shippingReturns.jsx'", "path.join(__dirname, './../Rebekah-Reviews-service/components/shippingReturns.jsx')");
 
 }
 
