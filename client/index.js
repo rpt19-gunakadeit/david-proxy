@@ -1,7 +1,7 @@
 import App from './App.jsx';
 
 var path = window.location.pathname.split('/');
-console.log(path);
+console.log('path', path);
 var productId = path[2]; 
 var styleId = path[3]; 
 
