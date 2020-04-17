@@ -1,4 +1,3 @@
-console.log('inside of index.jx');
 import App from './App.jsx';
 
 var path = window.location.pathname.split('/');

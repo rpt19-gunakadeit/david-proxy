@@ -135,8 +135,7 @@ class App extends React.Component {
 
                     <div className="css-rfq3p1 css-1kealuy">
                         <div className="pt4-sm prl6-sm prl0-lg">
-                            {/* <p>Description</p> */}
-                            {/* <Description test={this.test.bind(this)} productId={this.state.productId}/> */}
+                           
                             <Description 
                                 productId={this.state.productId}/>
                         </div>
@@ -144,7 +143,8 @@ class App extends React.Component {
                         
 
                         
-                        <div id="reviews-service"></div>
+                        {/* <div id="reviews-service"></div> */}
+                        {/* <Reviews /> */}
                     </div>
 
                 </div>
