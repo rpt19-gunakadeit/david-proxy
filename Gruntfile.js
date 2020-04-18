@@ -50,6 +50,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('rebekah', 'modify,bundle,upload', function() {
         //MODIFY THE FILES
+        grunt.log.writeln('modifying rebekah\'s files');
         modifyFiles(grunt);
 
         grunt.task.run(['webpack:rebekah','aws_s3:upload_rebekah'])
