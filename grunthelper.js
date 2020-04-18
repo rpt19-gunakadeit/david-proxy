@@ -39,16 +39,6 @@ var modifyFiles = (grunt) => {
         
         grunt.file.write(reb_fullReviews_jsx_path, reb_fullReviews_jsx);
 
-        //.....................................................
-        var reb_webpack_path = '../Rebekah-Reviews-service/webpack.config.js';
-        
-        var reb_webpack = grunt.file.read(reb_webpack_path);
-
-        reb_webpack = reb_webpack.replace("'./client/components/reviews.jsx'", "path.join(__dirname, './client/components/reviews.jsx')");
-
-        reb_webpack = reb_webpack.replace("'./client/components/shippingReturns.jsx'", "path.join(__dirname, './client/components/shippingReturns.jsx')");
-
-        grunt.file.write(reb_webpack_path, reb_webpack);
 }
 
 module.exports = modifyFiles;
