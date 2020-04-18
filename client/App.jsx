@@ -141,7 +141,7 @@ class App extends React.Component {
                         </div>
                         
                         <Reviews
-                            productId={this.state.productId} />
+                            productId={this.props.productId} />
                     </div>
 
                 </div>
