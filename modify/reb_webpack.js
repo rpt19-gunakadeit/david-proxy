@@ -3,6 +3,7 @@ const fs = require('fs');
 
 
 var reb_webpackConfig = fs.readFileSync('./../Rebekah-Reviews-service/webpack.config.js', 'utf-8')
+console.log(reb_webpackConfig);
 console.log(reb_webpackConfig.match(/reviews: .*\r\n/));
 // console.log(reb_webpackConfig.match(/shippingReturns: .*\r\n/))
 
