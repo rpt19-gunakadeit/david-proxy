@@ -23,7 +23,6 @@ var modify_files_reb = function(grunt) {
     reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
     fs.writeFileSync(reb_reviews_jsx_path, reb_reviews_jsx);
 
-    console.log('DOES THIS LOG????????????????????????')
     grunt.log.writeln(reb_reviews_jsx);
     //................................................................................................................................
     var reb_fullReviews_jsx_path = '../Rebekah-Reviews-service/client/components/fullReviews.jsx';
