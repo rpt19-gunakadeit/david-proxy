@@ -21,6 +21,7 @@ reb_reviews_jsx = reb_reviews_jsx.replace("const parsedUrl = new URL(window.loca
 reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "console.log('props:', this.props.productId);");
 reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/date',\n");
 reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
+reb_reviews_jsx = reb_reviews_jsx.replace("componentDidMount() {\n  this.getReviews();", "componentDidMount() {\n  console.log('test', this.props.productId);\nthis.getReviews();");
 fs.writeFileSync(reb_reviews_jsx_path, reb_reviews_jsx);
 //................................................................................................................................
 var reb_fullReviews_jsx_path = '../Rebekah-Reviews-service/client/components/fullReviews.jsx';
