@@ -20,6 +20,8 @@ var modifyFiles = (grunt) => {
 
         reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
 
+        reb_reviews_jsx = reb_reviews_jsx.replace("localhost", "ec2-54-241-130-11.us-west-1.compute.amazonaws.com");
+
         reb_reviews_jsx = reb_reviews_jsx.replace("productId", "this.props.productId");
 
         reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
@@ -34,6 +36,8 @@ var modifyFiles = (grunt) => {
         reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
 
         reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
+
+        reb_fullReviews_jsx = reb_fullReviews_jsx.replace("localhost", "ec2-54-241-130-11.us-west-1.compute.amazonaws.com");
 
         reb_fullReviews_jsx = reb_fullReviews_jsx.replace("productId", "this.props.productId");
         
