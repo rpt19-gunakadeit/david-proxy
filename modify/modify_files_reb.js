@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-var modify_files_reb = function(grunt) {
+var modify_files_reb = function() {
     //................................................................................................................................
     var reb_webpack_config_path = './../Rebekah-Reviews-service/webpack.config.js';
     var reb_webpack_config = fs.readFileSync(reb_webpack_config_path, 'utf-8')
@@ -22,8 +22,7 @@ var modify_files_reb = function(grunt) {
     reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n"/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/date',");
     reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
     fs.writeFileSync(reb_reviews_jsx_path, reb_reviews_jsx);
-
-    grunt.log.writeln(reb_reviews_jsx);
+    console.log(reb_reviews_jsx)
     //................................................................................................................................
     var reb_fullReviews_jsx_path = '../Rebekah-Reviews-service/client/components/fullReviews.jsx';
     var reb_fullReviews_jsx = fs.readFileSync(reb_fullReviews_jsx_path, 'utf-8');
@@ -31,6 +30,7 @@ var modify_files_reb = function(grunt) {
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace(/url: .*\n"/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/' + filter,");
     fs.writeFileSync(reb_fullReviews_jsx_path, reb_fullReviews_jsx);
+    console.log(reb_fullReviews_jsx)
     //................................................................................................................................
 }
 
