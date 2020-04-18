@@ -35,6 +35,7 @@ var modifyFiles = (grunt) => {
 
         reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
 
+        console.log(match(/url: .*\n"/));
         reb_fullReviews_jsx = reb_fullReviews_jsx.replace(/url: .*\n"/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/' + filter,");
         
         grunt.file.write(reb_fullReviews_jsx_path, reb_fullReviews_jsx);
