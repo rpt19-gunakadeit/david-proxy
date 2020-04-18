@@ -18,13 +18,10 @@ var modify_files_reb = function() {
     var reb_reviews_jsx_path = '../Rebekah-Reviews-service/client/components/reviews.jsx';
     var reb_reviews_jsx = fs.readFileSync(reb_reviews_jsx_path, 'utf-8');
     reb_reviews_jsx = reb_reviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
-    reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
+    reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "console.log(this.props.productId, props.productId)");
     reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/date',");
     reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
     fs.writeFileSync(reb_reviews_jsx_path, reb_reviews_jsx);
-    console.log('with n', reb_reviews_jsx.match(/url: .*\n/));
-    console.log('with r n', reb_reviews_jsx.match(/url: .*\r\n/));
-    console.log(reb_reviews_jsx)
     //................................................................................................................................
     var reb_fullReviews_jsx_path = '../Rebekah-Reviews-service/client/components/fullReviews.jsx';
     var reb_fullReviews_jsx = fs.readFileSync(reb_fullReviews_jsx_path, 'utf-8');
@@ -32,7 +29,6 @@ var modify_files_reb = function() {
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace(/url: .*\n/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/' + filter,");
     fs.writeFileSync(reb_fullReviews_jsx_path, reb_fullReviews_jsx);
-    console.log(reb_fullReviews_jsx)
     //................................................................................................................................
 }
 
