@@ -49,6 +49,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-aws-s3');
     grunt.loadNpmTasks('grunt-webpack');
 
+    grunt.registerTask('david', 'modify,bundle,upload', function() {
+        //BUNDLE and UPLOAD to S3
+        grunt.task.run(['webpack:david','aws_s3:upload_david'])
+    })
+
     grunt.registerTask('rebekah', 'modify,bundle,upload', function() {
         //BUNDLE and UPLOAD to S3
         grunt.task.run(['webpack:rebekah','aws_s3:upload_rebekah'])
