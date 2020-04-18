@@ -6,7 +6,7 @@ var modify_files_reb = function(grunt) {
     var reb_webpack_config = fs.readFileSync(reb_webpack_config_path, 'utf-8')
     reb_webpack_config = reb_webpack_config.replace(/reviews: .*\n/, "reviews: path.join(__dirname, './client/components/reviews.jsx'),\n");
     reb_webpack_config = reb_webpack_config.replace(/shippingReturns: .*\n/, "shippingReturns: path.join(__dirname, './client/components/shippingReturns.jsx')\n");
-    fs.writeFileSync(reb_webpack_config_path, reb_webpackConfig);
+    fs.writeFileSync(reb_webpack_config_path, reb_webpack_config);
     //................................................................................................................................
     var reb_database_js_path = '../Rebekah-Reviews-service/database/database.js';
     var reb_database_js = fs.readFileSync(reb_database_js_path, 'utf-8');
