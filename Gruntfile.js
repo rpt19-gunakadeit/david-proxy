@@ -1,7 +1,5 @@
 const fs = require('fs');
 
-const modify_files_reb = require('./modify/modify_files_reb');
-
 const proxy_webpackConfig = require('./webpack.config');
 const david_webpackConfig = require('./../david-service/webpack.config');
 const rebekah_webpackConfig = require('./../Rebekah-Reviews-service/webpack.config');
@@ -52,10 +50,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-webpack');
 
     grunt.registerTask('rebekah', 'modify,bundle,upload', function() {
-        //MODIFY THE FILES
-        grunt.log.writeln('modifying rebekah\'s files');
-        modify_files_reb();
-
         //BUNDLE and UPLOAD to S3
         grunt.task.run(['webpack:rebekah','aws_s3:upload_rebekah'])
     })

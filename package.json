@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon server",
     "startpm2": "pm2 start server",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "process_rebekah": "node modify/modify_files_reb.js & grunt rebekah"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
