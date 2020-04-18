@@ -16,7 +16,7 @@ var modify_files_reb = function(grunt) {
     fs.writeFileSync(reb_database_js_path, reb_database_js);
     //................................................................................................................................
     var reb_reviews_jsx_path = '../Rebekah-Reviews-service/client/components/reviews.jsx';
-    var reb_reviews_jsx = fs.readFileSync(reb_reviews_jsx_path);
+    var reb_reviews_jsx = fs.readFileSync(reb_reviews_jsx_path, 'utf-8');
     reb_reviews_jsx = reb_reviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
     reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
     reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n"/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/date',");
@@ -27,7 +27,7 @@ var modify_files_reb = function(grunt) {
     grunt.log.writeln(reb_reviews_jsx);
     //................................................................................................................................
     var reb_fullReviews_jsx_path = '../Rebekah-Reviews-service/client/components/fullReviews.jsx';
-    var reb_fullReviews_jsx = fs.readFileSync(reb_fullReviews_jsx_path);
+    var reb_fullReviews_jsx = fs.readFileSync(reb_fullReviews_jsx_path, 'utf-8');
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
     reb_fullReviews_jsx = reb_fullReviews_jsx.replace(/url: .*\n"/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/' + filter,");
