@@ -140,11 +140,8 @@ class App extends React.Component {
                                 productId={this.state.productId}/>
                         </div>
                         
-                        
-
-                        
-                        {/* <div id="reviews-service"></div> */}
-                        <Reviews />
+                        <Reviews
+                            productId={this.state.productId} />
                     </div>
 
                 </div>
