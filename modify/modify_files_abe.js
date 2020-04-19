@@ -9,6 +9,7 @@ fs.writeFileSync(abe_package_json_path, abe_package_json);
 //................................................................................................................................
 var abe_webpackConfig_js_path = '../abraham-productDisplay/webpack.config.js';
 var abe_webpackConfig_js = fs.readFileSync(abe_webpackConfig_js_path, 'utf-8');
+abe_webpackConfig_js = abe_webpackConfig_js.replace("entry: `${src}/index.jsx`,", "entry: `${src}/components/ProductImages.jsx`,");
 abe_webpackConfig_js = abe_webpackConfig_js.replace("'bundle.js'", "'productImagesBundle.js'");
 abe_webpackConfig_js = abe_webpackConfig_js.replace("watch: true,", "");
 fs.writeFileSync(abe_webpackConfig_js_path, abe_webpackConfig_js);
