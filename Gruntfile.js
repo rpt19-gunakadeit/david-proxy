@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                 files: [
                     {expand: true, cwd: '../abraham-productDisplay/client/dist', src: 'productImagesBundle.js', dest: '/'}
                 ]
-            },
+            }
         },
 
         webpack: {
