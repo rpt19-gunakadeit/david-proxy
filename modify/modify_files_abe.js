@@ -2,6 +2,11 @@ const fs = require('fs');
 
 console.log('MODIFYING ABRAHAM\'S FILES');
 //................................................................................................................................
+var abe_package_json_path = '../abraham-productDisplay/package.json';
+var abe_package_json = fs.readFileSync(abe_package_json_path, 'utf-8');
+abe_package_json = abe_package_json.replace('"server"', '"start"');
+fs.writeFileSync(abe_package_json_path, abe_package_json);
+//................................................................................................................................
 var abe_webpackConfig_js_path = '../abraham-productDisplay/webpack.config.js';
 var abe_webpackConfig_js = fs.readFileSync(abe_webpackConfig_js_path, 'utf-8');
 abe_webpackConfig_js = abe_webpackConfig_js.replace("'bundle.js'", "'productImagesBundle.js'");
