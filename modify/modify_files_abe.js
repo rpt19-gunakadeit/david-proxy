@@ -16,7 +16,7 @@ var abe_ProductImages_jsx_path = '../abraham-productDisplay/client/src/component
 var abe_ProductImages_jsx = fs.readFileSync(abe_ProductImages_jsx_path, 'utf-8');
 abe_ProductImages_jsx = abe_ProductImages_jsx.replace("let params = new URL(window.location.href)", "");
 abe_ProductImages_jsx = abe_ProductImages_jsx.replace("let styleId = params.searchParams.get('');", "");
-abe_ProductImages_jsx = abe_ProductImages_jsx.replace(/url: .*\n/, "url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/:${this.props.productId}/`\n");
+abe_ProductImages_jsx = abe_ProductImages_jsx.replace(/url: .*\n/, "url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/:${this.props.productId}/`,\n");
 abe_ProductImages_jsx+= '\nwindow.ProductImages = ProductImages;'
 fs.writeFileSync(abe_ProductImages_jsx_path, abe_ProductImages_jsx);
 //................................................................................................................................
