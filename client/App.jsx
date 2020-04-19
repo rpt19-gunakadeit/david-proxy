@@ -129,7 +129,8 @@ class App extends React.Component {
                 <div className="css-5x88d2 css-l8ohx9">
                     <div className="css-1lvkqmp">
                         <div id="app">
-                            
+                            <ProductImages 
+                                productId={this.state.productId}/>
                         </div>
                     </div>
 

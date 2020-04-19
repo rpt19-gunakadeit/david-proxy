@@ -18,7 +18,7 @@ fs.writeFileSync(reb_database_js_path, reb_database_js);
 var reb_reviews_jsx_path = '../Rebekah-Reviews-service/client/components/reviews.jsx';
 var reb_reviews_jsx = fs.readFileSync(reb_reviews_jsx_path, 'utf-8');
 reb_reviews_jsx = reb_reviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
-reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "console.log('props:', this.props.productId);");
+reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
 reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/date',\n");
 reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
 reb_reviews_jsx = reb_reviews_jsx.replace("componentDidMount() {", "componentDidMount() {console.log('test', this.props.productId);");
