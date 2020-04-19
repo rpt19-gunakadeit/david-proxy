@@ -5,6 +5,7 @@ console.log('MODIFYING ABRAHAM\'S FILES');
 var abe_webpackConfig_js_path = '../abraham-productDisplay/webpack.config.js';
 var abe_webpackConfig_js = fs.readFileSync(abe_webpackConfig_js_path, 'utf-8');
 abe_webpackConfig_js = abe_webpackConfig_js.replace("'bundle.js'", "'productImagesBundle.js'");
+abe_webpackConfig_js = abe_webpackConfig_js.replace("watch: true,", "");
 fs.writeFileSync(abe_webpackConfig_js_path, abe_webpackConfig_js);
 //................................................................................................................................
 var abe_database_js_path = '../abraham-productDisplay/database/index.js';
