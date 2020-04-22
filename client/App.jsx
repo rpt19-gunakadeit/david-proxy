@@ -126,39 +126,23 @@ class App extends React.Component {
                 </nav>
 
 
-                <div className="css-5x88d2 css-l8ohx9">
-                    <div className="css-1lvkqmp">
-                        <div id="app">
-                            <ProductImages 
-                                productId={this.state.productId}/>
-                        </div>
-                    </div>
 
-                    <div className="css-rfq3p1 css-1kealuy">
-                        <div className="pt4-sm prl6-sm prl0-lg">
-                           
-                            <Description 
-                                productId={this.state.productId}/>
-                        </div>
-                        
-                        <Reviews
-                            productId={this.props.productId} />
+                {/*MAIN SECTION*/}
+                <div id="main-container" className="d-f">
+                    <div id="imgs-container">
+                        <ProductImages productId={this.state.productId}/>
+                    </div>
+                    <div id="info-container">
+                        <Description productId={this.state.productId}/>
                     </div>
 
                 </div>
 
+                {/*************/}
+
+
+
                 
-
-                
-
-
-                
-                
-            
-
-
-
-
             
                 <footer className="l-footer bg-black">
                     <div className="ncss-container nav-fixed-fluid prl5-md pt5-sm pt10-md pb0-md prl10-lg">a</div>

@@ -410,3 +410,31 @@ a {
     max-width: 1440px;
     border: 1px solid white;
 }
+
+
+
+
+
+
+
+
+/* David CSS */
+/*standard styles***************************/
+.d-f {
+    display: flex;
+}
+
+.f-1-1-0 {
+    flex: 1 1 0%;
+}
+
+.f-3-1-0 {
+    flex: 3 1 0%;
+}
+/*******************************************/
+
+#main-container {
+    border: 3px dashed greenyellow;
+    max-width: 1440px;
+    margin: auto;
+}
