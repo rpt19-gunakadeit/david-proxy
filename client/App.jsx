@@ -134,6 +134,7 @@ class App extends React.Component {
                     </div>
                     <div id="info-container">
                         <Description productId={this.state.productId}/>
+                        <Reviews productId={this.state.productId}/>
                     </div>
 
                 </div>
