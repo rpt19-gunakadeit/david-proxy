@@ -52,7 +52,7 @@ var getProductInfo = (productId) => {
         productInfo.styles.forEach((style, idx) => {
             style.stock = inventoriesPerStyle[idx]
         })
-        console.log('about to request from abe\'s db');
+
         return request.getAsync(\`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/t/` + "${productId}" + `\`);
         
     }).then(results => {
