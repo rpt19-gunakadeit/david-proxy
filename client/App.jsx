@@ -7,7 +7,7 @@ class App extends React.Component {
             productId: this.props.productId,
             styleId: this.props.styleId,
             productInfo: {name: '', styles: [{name: ''}]},
-            styleInfo: {},
+            styleInfo: {name: ''},
             mediumImages: []
         }
     }
@@ -201,8 +201,8 @@ class App extends React.Component {
                             setProductInfo={this.setProductInfo.bind(this)}/>
                         <Description 
                             productId={this.state.productId}
-                            styleId={this.state.styleId}
-                            productInfo={this.state.productInfo}/>
+                            productInfo={this.state.productInfo}
+                            styleInfo={this.state.styleInfo}/>
                         <Reviews 
                             productId={this.state.productId}/>
                     </div>
