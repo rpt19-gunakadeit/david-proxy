@@ -29,7 +29,7 @@ abe_server_index_js = abe_server_index_js.replace("db.getMediumImage((err, data)
 fs.writeFileSync(abe_server_index_js_path, abe_server_index_js);
 //................................................................................................................................
 var abe_ProductImages_jsx_path = '../abraham-productDisplay/client/src/components/ProductImages.jsx';
-fs.unlinkSync(abe_ProductImages_jsx);
+fs.unlinkSync(abe_ProductImages_jsx_path);
 fs.writeFileSync(abe_ProductImages_jsx_path, `import React from 'react';
 import $ from 'jquery';
 import './ProductImages.css'
