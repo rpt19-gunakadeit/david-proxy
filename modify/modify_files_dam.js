@@ -71,7 +71,6 @@ module.exports = { getProductInfo };`);
 
 
 var dam_db_index_js_path = '../damien-styles-and-inventory/db/index.js';
-fs.unlinkSync(dam_db_index_js_path);
 fs.writeFileSync(dam_db_index_js_path, `const mysql = require('mysql');
 const Promise = require('bluebird');
 
