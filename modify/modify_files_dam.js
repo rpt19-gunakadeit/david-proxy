@@ -91,7 +91,7 @@ module.exports = db;`);
 
 
 var dam_package_json_path = '../damien-styles-and-inventory/package.json';
-fs.unlinkSync(dam_package_json_pathh);
+fs.unlinkSync(dam_package_json_path);
 fs.writeFileSync(dam_package_json_path, `{
     "name": "fec",
     "version": "",
