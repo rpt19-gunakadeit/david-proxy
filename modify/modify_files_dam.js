@@ -23,7 +23,7 @@ app.get('/api/products/:productId', ( req, res) => {
 });
 
 
-app.listen(port, () => console.log(\`Nike app listening on port ${port}!\`))`);
+app.listen(port, () => console.log(\`Nike app listening on port ` + `${port}` + `!\`))`);
 
 
 var dam_db_queries_js_path = '../damien-styles-and-inventory/db/queries.js';
@@ -35,17 +35,17 @@ const request = Promise.promisifyAll(require('request'));
 var getProductInfo = (productId) => {
     var productInfo = {};
 
-    return db.queryAsync(\`SELECT * FROM products where id = ${productId}\`)
+    return db.queryAsync(\`SELECT * FROM products where id = ` + `${productId}` + `\`)
     .then(product => {
         productInfo.name = product[0].name;
         productInfo.type = "Shoe";
-        return db.queryAsync(\`SELECT id, name, code, price_retail, price_sale FROM styles where product_id = ${productId}\`);
+        return db.queryAsync(\`SELECT id, name, code, price_retail, price_sale FROM styles where product_id = ` + `${productId}` + `\`);
     })
     .then(styles => {
         productInfo.styles = styles;
         var inventoriesPerStyle = [];
         styles.forEach(style => {
-            inventoriesPerStyle.push(db.queryAsync(\`SELECT size, stock FROM inventory where style_id =${style.id}\`));
+            inventoriesPerStyle.push(db.queryAsync(\`SELECT size, stock FROM inventory where style_id = ` + `${style.id}` + `\`));
         })
         return Promise.all(inventoriesPerStyle);
     })
@@ -54,7 +54,7 @@ var getProductInfo = (productId) => {
             style.stock = inventoriesPerStyle[idx]
         })
         console.log('about to request from abe\'s db');
-        return request.getAsync(\`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/t/${productId}\`);
+        return request.getAsync(\`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/t/` + `${productId}` + `\`);
         
     }).then(results => {
         smallImgsUrls = JSON.parse(results.body);
