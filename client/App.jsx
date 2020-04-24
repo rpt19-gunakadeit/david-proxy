@@ -6,14 +6,19 @@ class App extends React.Component {
         this.state = {
             productId: this.props.productId,
             styleId: this.props.styleId,
-            productInfo: {}
+            productInfo: {},
+            styleInfo: {}
         }
     }
 
     setStyleDetails(styleId) {
-        
-        this.setState(
-            {styleId}, 
+        var styleInfo = this.state.productInfo.styles.filter(style => style.id === this.state.styleId)[0];
+        console.log(styleInfo);
+
+        this.setState({
+            styleId,
+            styleInfo
+        }, 
             () => {
             window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.styleId}/`);
             }
@@ -154,7 +159,7 @@ class App extends React.Component {
                     <div id="info-container">
                         <Styles 
                             productId={this.state.productId} 
-                            styleId={this.state.styleId} 
+                            styleInfo={this.state.styleInfo} 
                             productInfo={this.state.productInfo}
                             setStyleDetails={this.setStyleDetails.bind(this)}
                             setProductInfo={this.setProductInfo.bind(this)}/>
