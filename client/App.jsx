@@ -11,15 +11,17 @@ class App extends React.Component {
         }
     }
 
-    setStyleDetails (style) {
+    setStyleDetails(style) {
         
-        this.setState({
-          style
+        this.setState({style}, () => {
+            window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.style}/`);
         })
-        window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.style}/`);
+        
     }
+        
 
-    setProductInfo (productInfo) {
+
+    setProductInfo(productInfo) {
         this.setState({
             productInfo
         })
