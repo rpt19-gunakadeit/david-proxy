@@ -13,7 +13,7 @@ app.use(express.static('./client/dist'));
 
 // GET PRODUCT/STYLE INFO
 // Sample call: http://localhost:4000/api/products/88
-app.get('/api/products/:productId', ( req, res) => {
+app.use('/api/products/:productId', ( req, res) => {
     console.log(req.params)
     var { productId } = req.params;
     query.getProductInfo(productId)
