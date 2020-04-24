@@ -88,3 +88,56 @@ then(() => {
 })
 
 module.exports = db;`);
+
+
+var dam_package_json_path = '../damien-styles-and-inventory/package.json';
+fs.unlinkSync(dam_package_json_pathh);
+fs.writeFileSync(dam_package_json_path, `{
+    "name": "fec",
+    "version": "",
+    "description": "",
+    "author": "",
+    "license": "",
+    "engines": {
+      "node": ">=6.13.0"
+    },
+    "scripts": {
+      "start": "nodemon server",
+      "startpm2": "pm2 start server",
+      "seedDB": "mysql -u root -p < db/schema.sql",
+      "startDB": "mysql -u root -p",
+      "build": "webpack -d --watch",
+      "test": "jest"
+    },
+    "dependencies": {
+      "bluebird": "^3.7.2",
+      "css-loader": "^3.4.2",
+      "express": "^4.17.1",
+      "lodash": "^4.17.15",
+      "mysql": "^2.18.1",
+      "react": "^16.13.0",
+      "react-dom": "^16.13.0",
+      "style-loader": "^1.1.3",
+      "webpack": "^4.42.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.8.7",
+      "@babel/preset-env": "^7.9.0",
+      "@babel/preset-react": "^7.8.3",
+      "babel-jest": "^25.1.0",
+      "babel-loader": "^8.0.6",
+      "enzyme": "^3.11.0",
+      "enzyme-adapter-react-16": "^1.15.2",
+      "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+      "identity-obj-proxy": "^3.0.0",
+      "jest": "^25.1.0",
+      "react-test-renderer": "^16.13.1",
+      "webpack-cli": "^3.3.11"
+    },
+    "jest": {
+      "moduleNameMapper": {
+        "\\.(css|less)$": "identity-obj-proxy"
+      }
+    }
+  }
+  `);
