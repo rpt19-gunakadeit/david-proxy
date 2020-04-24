@@ -80,12 +80,6 @@ class ProductImages extends React.Component {
     // console.log('modalView: ', modalView);
     return (
       <div className="defaultDisplay">
-        <div className="nav">
-          <img
-          src="https://miro.medium.com/max/3360/1*OUhIm3AKJlbrFrxdS-7E6Q.png"
-          className="navbar"
-          />
-        </div>
           <div className='imageBody'>
           {this.props.mediumImages.map(img => (
             <img
