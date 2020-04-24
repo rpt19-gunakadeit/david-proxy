@@ -75,7 +75,7 @@ class ProductImages extends React.Component {
   }
 
   render() {
-    this.displayImages();
+    
     let { defaultImages, show, modalView } = this.state;
     // console.log('modalView: ', modalView);
     return (
