@@ -27,9 +27,8 @@ app.listen(port, () => console.log(\`Nike app listening on port ` + "${port}" + 
 
 
 var dam_db_queries_js_path = '../damien-styles-and-inventory/db/queries.js';
-fs.unlinkSync(dam_db_queries_js_path);
 fs.writeFileSync(dam_db_queries_js_path, `const db = require('./index.js');
-const Promise = require('bluebird');
+const Promise = require('bluebird')f;
 const request = Promise.promisifyAll(require('request'));
 
 var getProductInfo = (productId) => {
