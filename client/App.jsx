@@ -7,7 +7,8 @@ class App extends React.Component {
             productId: this.props.productId,
             styleId: this.props.styleId,
             productInfo: {},
-            styleInfo: {}
+            styleInfo: {},
+            mediumImages: []
         }
     }
 
@@ -28,6 +29,7 @@ class App extends React.Component {
         }, 
             () => {
             window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.styleId}/`);
+            this.displayImages();
             }
         )
 
@@ -40,6 +42,31 @@ class App extends React.Component {
             productInfo
         })
     }
+
+
+    componentDidMount() {
+        this.displayImages();
+    }
+
+    displayImages() {
+        $.ajax({
+          //retrieve medium sized images
+          url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/${this.state.styleId}`,
+          method: 'GET',
+          dataType: 'json',
+          success: (data) => {
+            console.log('data: ', data)
+            this.setState({
+              mediumImages: data
+            })
+          },
+          error: (err) => {
+            console.log('Error: ', err);
+          }
+        })
+      }
+
+
 
 
     render() {
@@ -161,7 +188,9 @@ class App extends React.Component {
                 {/*MAIN SECTION*/}
                 <div id="main-container" className="d-f">
                     <div id="imgs-container">
-                        <ProductImages styleId={this.state.styleId}/>
+                        <ProductImages 
+                        styleId={this.state.styleId}
+                        mediumImages={this.state.mediumImages}/>
                     </div>
                     <div id="info-container">
                         <Styles 

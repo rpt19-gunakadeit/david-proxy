@@ -46,7 +46,7 @@ class ProductImages extends React.Component {
   }
 
   componentDidMount() {
-    this.displayImages();
+    //this.displayImages();
   }
 
   toggleModal() {
@@ -87,7 +87,7 @@ class ProductImages extends React.Component {
           />
         </div>
           <div className='imageBody'>
-          {defaultImages.map(img => (
+          {props.mediumImages.map(img => (
             <img
             className="defaultSize"
             // id="modal"

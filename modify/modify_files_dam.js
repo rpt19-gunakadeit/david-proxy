@@ -24,6 +24,14 @@ app.use('/api/products/:productId', ( req, res) => {
     })
 });
 
+//app.use('/api/styles/:styleId, (req, res) => {
+  //  var { styleId } = req.params;
+    //query.getStylesInfo(styleId)
+    //.then(styleInfo => {
+      //  res.status(200).send(JSON.stringify(productInfo));
+    //})
+//})
+
 
 app.listen(port, () => console.log(\`Nike app listening on port ` + "${port}" + `!\`))`);
 
@@ -68,6 +76,10 @@ var getProductInfo = (productId) => {
     })
     
 }
+
+//var getStylesInfo = (styleId) => {
+  //  db.queryAsync(\`SELECT * styles where )
+//}
 
 module.exports = { getProductInfo };`);
 
