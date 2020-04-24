@@ -133,5 +133,5 @@ fs.writeFileSync(dam_package_json_path, `{
       "jest": "^25.1.0",
       "react-test-renderer": "^16.13.1",
       "webpack-cli": "^3.3.11"
-    },
+    }
   }`);
