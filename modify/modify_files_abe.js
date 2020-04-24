@@ -20,6 +20,7 @@ abe_database_js = abe_database_js.replace("'password'", "'pw'");
 abe_database_js = abe_database_js.replace("let getSmallImage = function(callback) {", "let getSmallImage = function(productId, callback) {");
 abe_database_js = abe_database_js.replace("let getMediumImage = (callback) => {", "let getMediumImage = (styleId, callback) => {");
 abe_database_js = abe_database_js.replace(/let selectQry = `SELECT * FROM small_images where styleId = ${styleId}`;/i, "let selectQry = `SELECT * FROM small_images where productId = ${productId}`;");
+abe_database_js = abe_database_js.replace("let selectQry = `select * from medium_images where styleId = 36`;", "let selectQry = `SELECT * FROM medium_images where styleId = ${styleId}`;");
 fs.writeFileSync(abe_database_js_path, abe_database_js);
 //................................................................................................................................
 var abe_server_index_js_path = '../abraham-productDisplay/server/index.js';
