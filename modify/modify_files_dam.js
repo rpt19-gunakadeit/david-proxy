@@ -134,10 +134,4 @@ fs.writeFileSync(dam_package_json_path, `{
       "react-test-renderer": "^16.13.1",
       "webpack-cli": "^3.3.11"
     },
-    "jest": {
-      "moduleNameMapper": {
-        "\\.(css|less)$": "identity-obj-proxy"
-      }
-    }
-  }
-  `);
+  }`);
