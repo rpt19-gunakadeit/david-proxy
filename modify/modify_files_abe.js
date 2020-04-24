@@ -29,12 +29,89 @@ abe_server_index_js = abe_server_index_js.replace("db.getMediumImage((err, data)
 fs.writeFileSync(abe_server_index_js_path, abe_server_index_js);
 //................................................................................................................................
 var abe_ProductImages_jsx_path = '../abraham-productDisplay/client/src/components/ProductImages.jsx';
-var abe_ProductImages_jsx = fs.readFileSync(abe_ProductImages_jsx_path, 'utf-8');
-abe_ProductImages_jsx = abe_ProductImages_jsx.replace("let params = new URL(window.location.href)", "");
-abe_ProductImages_jsx = abe_ProductImages_jsx.replace("let styleId = params.searchParams.get('');", "");
+fs.unlinkSync(abe_ProductImages_jsx);
+fs.writeFileSync(abe_ProductImages_jsx_path, `import React from 'react';
+import $ from 'jquery';
+import './ProductImages.css'
+
+class ProductImages extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      defaultImages: [],
+      show: false,
+      modalView: [] //i want to use this key to trigger the view of images to a modal state onClick
+    }
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  componentDidMount() {
+    this.displayImages();
+  }
+
+  toggleModal() {
+    this.setState({
+      show: !this.state.show
+    })
+  }
+
+  displayImages() {
+    $.ajax({
+      //retrieve medium sized images
+      url: \`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/`+`${this.props.styleId}`+`/\`,
+      method: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        console.log('data: ', data)
+        this.setState({
+          defaultImages: data,
+          modalView: data
+        })
+      },
+      error: (err) => {
+        console.log('Error: ', err);
+      }
+    })
+  }
+
+  render() {
+    this.displayImages();
+    let { defaultImages, show, modalView } = this.state;
+    // console.log('modalView: ', modalView);
+    return (
+      <div className="defaultDisplay">
+        <div className="nav">
+          <img
+          src="https://miro.medium.com/max/3360/1*OUhIm3AKJlbrFrxdS-7E6Q.png"
+          className="navbar"
+          />
+        </div>
+          <div className='imageBody'>
+          {defaultImages.map(img => (
+            <img
+            className="defaultSize"
+            // id="modal"
+            key={img.id}
+            value={img.styleId}
+            src={img.mediumUrl}
+            onClick={this.toggleModal}
+            />
+          ))}
+          </div>
+        {/* <ImageModal images={modalView} show={show} handleModal={this.toggleModal} /> */}
+      </div>
+    )
+  }
+}
+
+export default ProductImages;`);
+
 abe_ProductImages_jsx = abe_ProductImages_jsx.replace(/url: .*\n/, "url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/${this.props.styleId}/`,\n");
 abe_ProductImages_jsx+= '\nwindow.ProductImages = ProductImages;'
-fs.writeFileSync(abe_ProductImages_jsx_path, abe_ProductImages_jsx);
+
+
+
+
 //................................................................................................................................
 var abe_schema_sql_path = '../abraham-productDisplay/schema.sql';
 fs.unlinkSync(abe_schema_sql_path);
