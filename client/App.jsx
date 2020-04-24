@@ -12,8 +12,11 @@ class App extends React.Component {
     }
 
     setStyleDetails(styleId) {
-        var styleInfo = this.state.productInfo.styles.filter(style => style.id === this.state.styleId)[0];
-        console.log(styleInfo);
+        var styleInfo = this.state.productInfo.styles.filter(style => {
+            console.log('style', style);
+            style.id === this.state.styleId
+        })[0];
+        console.log('styleInfo', styleInfo);
 
         this.setState({
             styleId,
