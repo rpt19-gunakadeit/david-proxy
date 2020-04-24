@@ -17,7 +17,7 @@ class App extends React.Component {
         var styleInfo = this.state.productInfo.styles.filter(style => {
             console.log('style', style);
             
-            return style.id === this.state.styleId
+            return style.id === styleId;
         })[0];
         console.log('styleInfo', styleInfo);
 
