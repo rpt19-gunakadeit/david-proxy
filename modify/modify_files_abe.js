@@ -25,7 +25,7 @@ fs.writeFileSync(abe_database_js_path, abe_database_js);
 //................................................................................................................................
 var abe_server_index_js_path = '../abraham-productDisplay/server/index.js';
 var abe_server_index_js = fs.readFileSync(abe_server_index_js_path, 'utf-8');
-abe_server_index_js = abe_server_index_js.replace("db.getMediumImage((err, data) => {", "var { styleId } = req.params;\ndb.getMediumImage(styleId, (err, data) => {");
+abe_server_index_js = abe_server_index_js.replace("db.getMediumImage((err, data) => {", "var { styleId } = req.params;\nconsole.log(styleId)\ndb.getMediumImage(styleId, (err, data) => {");
 fs.writeFileSync(abe_server_index_js_path, abe_server_index_js);
 //................................................................................................................................
 var abe_ProductImages_jsx_path = '../abraham-productDisplay/client/src/components/ProductImages.jsx';
