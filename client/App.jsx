@@ -12,7 +12,7 @@ class App extends React.Component {
     }
 
     setStyleDetails(styleId) {
-        
+        styleId = Number(styleId);
         console.log('this.state.styleId', this.state.styleId, typeof this.state.styleId);
         console.log('styleId', styleId, typeof styleId);
         var styleInfo = this.state.productInfo.styles.filter(style => {
