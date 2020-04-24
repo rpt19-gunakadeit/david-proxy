@@ -5,9 +5,22 @@ class App extends React.Component {
         super(props);
         this.state = {
             productId: this.props.productId,
-            styleId: this.props.styleId,
-            num: 1
+            // styleId: this.props.styleId,
+            style: this.props.styleId,
+            productInfo: {}
         }
+    }
+
+    setStyleDetails (style) {
+        this.setState({
+          style
+        })
+    }
+
+    setProductInfo (productInfo) {
+        this.setState({
+            productInfo
+        })
     }
 
 
@@ -133,8 +146,16 @@ class App extends React.Component {
                         <ProductImages productId={this.state.productId}/>
                     </div>
                     <div id="info-container">
-                        <Description productId={this.state.productId}/>
-                        <Reviews productId={this.state.productId}/>
+                        <Styles 
+                            productId={this.state.productId} 
+                            style={this.state.style} 
+                            productInfo={this.state.productInfo}
+                            setStyleDetails={this.setStyleDetails.bind(this)}
+                            setProductInfo={this.setProductInfo.bind(this)}/>
+                        <Description 
+                            productId={this.state.productId}/>
+                        <Reviews 
+                            productId={this.state.productId}/>
                     </div>
 
                 </div>

@@ -14,7 +14,8 @@
     "process_proxy": "grunt proxy",
     "process_david": "grunt david",
     "process_rebekah": "node modify/modify_files_reb.js & grunt rebekah",
-    "process_abraham": "node modify/modify_files_abe.js & grunt abraham"
+    "process_abraham": "node modify/modify_files_abe.js & grunt abraham",
+    "process_damien": "node modify/modify_files_dam.js"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
