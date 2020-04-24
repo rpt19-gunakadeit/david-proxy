@@ -58,7 +58,7 @@ class ProductImages extends React.Component {
   displayImages() {
     $.ajax({
       //retrieve medium sized images
-      url: \`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/`+`${this.props.styleId}`+`/\`,
+      url: \`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/`+"${this.props.styleId}"+`/\`,
       method: 'GET',
       dataType: 'json',
       success: (data) => {
@@ -103,14 +103,8 @@ class ProductImages extends React.Component {
     )
   }
 }
-
+window.ProductImages = ProductImages;
 export default ProductImages;`);
-
-abe_ProductImages_jsx = abe_ProductImages_jsx.replace(/url: .*\n/, "url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/${this.props.styleId}/`,\n");
-abe_ProductImages_jsx+= '\nwindow.ProductImages = ProductImages;'
-
-
-
 
 //................................................................................................................................
 var abe_schema_sql_path = '../abraham-productDisplay/schema.sql';
