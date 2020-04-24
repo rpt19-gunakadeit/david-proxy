@@ -12,10 +12,11 @@ class App extends React.Component {
     }
 
     setStyleDetails (style) {
-        window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.style}/`);
+        
         this.setState({
           style
         })
+        window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.style}/`);
     }
 
     setProductInfo (productInfo) {
