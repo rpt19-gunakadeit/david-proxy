@@ -17,11 +17,11 @@ class App extends React.Component {
             console.log('style', style);
             
             return style.id === this.state.styleId
-        });
+        })[0];
         console.log('styleInfo', styleInfo);
 
         this.setState({
-            styleId,
+            styleId = Number(styleId),
             styleInfo
         }, 
             () => {
