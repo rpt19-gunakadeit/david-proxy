@@ -40,7 +40,8 @@ class App extends React.Component {
     setProductInfo(productInfo) {
         var styleInfo = productInfo.styles.filter(style => {
             return style.id === this.state.styleId;
-        })
+        })[0];
+        console.log('*', styleInfo)
         this.setState({
             productInfo,
             styleInfo
