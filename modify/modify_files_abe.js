@@ -87,7 +87,7 @@ class ProductImages extends React.Component {
           />
         </div>
           <div className='imageBody'>
-          {props.mediumImages.map(img => (
+          {this.props.mediumImages.map(img => (
             <img
             className="defaultSize"
             // id="modal"
