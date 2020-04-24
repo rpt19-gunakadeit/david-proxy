@@ -8,6 +8,7 @@ fs.writeFileSync(dam_server_index_js_path, `const express = require('express')
 const app = express()
 const port = 4000
 const query = require('./../db/queries.js');
+const cors = require('cors');
 
 app.use(express.static('./client/dist'));
 
@@ -111,6 +112,7 @@ fs.writeFileSync(dam_package_json_path, `{
     },
     "dependencies": {
       "bluebird": "^3.7.2",
+      "cors": "^2.8.5",
       "css-loader": "^3.4.2",
       "express": "^4.17.1",
       "lodash": "^4.17.15",
