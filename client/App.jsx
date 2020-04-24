@@ -5,18 +5,20 @@ class App extends React.Component {
         super(props);
         this.state = {
             productId: this.props.productId,
-            // styleId: this.props.styleId,
-            style: this.props.styleId,
+            styleId: this.props.styleId,
             productInfo: {}
         }
     }
 
-    setStyleDetails(style) {
+    setStyleDetails(styleId) {
         
-        this.setState({style}, () => {
-            window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.style}/`);
-        })
-        
+        this.setState(
+            {styleId}, 
+            () => {
+            window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.styleId}/`);
+            }
+        )
+
     }
         
 
@@ -147,12 +149,12 @@ class App extends React.Component {
                 {/*MAIN SECTION*/}
                 <div id="main-container" className="d-f">
                     <div id="imgs-container">
-                        <ProductImages productId={this.state.productId}/>
+                        <ProductImages styleId={this.state.styleId}/>
                     </div>
                     <div id="info-container">
                         <Styles 
                             productId={this.state.productId} 
-                            style={this.state.style} 
+                            styleId={this.state.styleId} 
                             productInfo={this.state.productInfo}
                             setStyleDetails={this.setStyleDetails.bind(this)}
                             setProductInfo={this.setProductInfo.bind(this)}/>
