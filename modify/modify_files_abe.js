@@ -22,6 +22,11 @@ abe_database_js = abe_database_js.replace("let getMediumImage = (callback) => {"
 abe_database_js = abe_database_js.replace(/let selectQry = `SELECT * FROM small_images where styleId = ${styleId}`;/i, "let selectQry = `SELECT * FROM small_images where productId = ${productId}`;");
 fs.writeFileSync(abe_database_js_path, abe_database_js);
 //................................................................................................................................
+var abe_server_index_js_path = '../abraham-productDisplay/server/index.js';
+var abe_server_index_js = fs.readFileSync(abe_server_index_js_path, 'utf-8');
+abe_server_index_js = abe_server_index_js.replace("db.getMediumImage((err, data) => {", "var { styleId } = req.params;\ndb.getMediumImage(styleId, (err, data) => {");
+fs.writeFileSync(abe_server_index_js_path, abe_server_index_js);
+//................................................................................................................................
 var abe_ProductImages_jsx_path = '../abraham-productDisplay/client/src/components/ProductImages.jsx';
 var abe_ProductImages_jsx = fs.readFileSync(abe_ProductImages_jsx_path, 'utf-8');
 abe_ProductImages_jsx = abe_ProductImages_jsx.replace("let params = new URL(window.location.href)", "");
