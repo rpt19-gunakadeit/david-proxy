@@ -10,6 +10,7 @@ const port = 4000
 const query = require('./../db/queries.js');
 const cors = require('cors');
 
+app.use(cors());
 app.use(express.static('./client/dist'));
 
 // GET PRODUCT/STYLE INFO
