@@ -189,36 +189,39 @@ class App extends React.Component {
                     </div>
                     <div id="info-container">
                         <div id="info-smaller-container">
-                        <Styles 
-                            productId={this.state.productId} 
-                            styleInfo={this.state.styleInfo} 
-                            productInfo={this.state.productInfo}
-                            setStyleDetails={this.setStyleDetails.bind(this)}
-                            setProductInfo={this.setProductInfo.bind(this)}/>
-                        <div id="Description">
-                            <Description 
-                                productId={this.state.productId}
+                            <Styles 
+                                productId={this.state.productId} 
+                                styleInfo={this.state.styleInfo} 
                                 productInfo={this.state.productInfo}
-                                styleInfo={this.state.styleInfo}/>
-                        </div>
+                                setStyleDetails={this.setStyleDetails.bind(this)}
+                                setProductInfo={this.setProductInfo.bind(this)}/>
+                            <div id="Description">
+                                <Description 
+                                    productId={this.state.productId}
+                                    productInfo={this.state.productInfo}
+                                    styleInfo={this.state.styleInfo}/>
+                            </div>
 
-                        <div id="Reviews">
-                            <Reviews 
-                                productId={this.state.productId}/>
-                        </div>
-                        </div>
+                            <div id="Reviews">
+                                <Reviews 
+                                    productId={this.state.productId}/>
+                            </div>
 
-                        <div id="ShippingReturns">
-                            <ShippingReturns/>
+                            <div id="ShippingReturns">
+                                <ShippingReturns/>
+                            </div>
                         </div>
-                        </div>
+                            
+                
+
+                    
                         
                         
                     </div>
 
                 </div>
 
-                {/*************/}
+            
 
 
 
