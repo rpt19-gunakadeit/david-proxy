@@ -30,9 +30,8 @@ fs.writeFileSync(abe_server_index_js_path, abe_server_index_js);
 //................................................................................................................................
 var abe_ProductImages_jsx_path = '../abraham-productDisplay/client/src/components/ProductImages.jsx';
 fs.unlinkSync(abe_ProductImages_jsx_path);
-fs.writeFileSync(abe_ProductImages_jsx_path, `import React from 'react';
-import $ from 'jquery';
-import './ProductImages.css'
+fs.writeFileSync(abe_ProductImages_jsx_path, 
+`import './ProductImages.css'
 
 class ProductImages extends React.Component {
   constructor(props) {
@@ -55,24 +54,6 @@ class ProductImages extends React.Component {
     })
   }
 
-  displayImages() {
-    $.ajax({
-      //retrieve medium sized images
-      url: \`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/`+"${this.props.styleId}"+`/\`,
-      method: 'GET',
-      dataType: 'json',
-      success: (data) => {
-        console.log('data: ', data)
-        this.setState({
-          defaultImages: data,
-          modalView: data
-        })
-      },
-      error: (err) => {
-        console.log('Error: ', err);
-      }
-    })
-  }
 
   render() {
     
