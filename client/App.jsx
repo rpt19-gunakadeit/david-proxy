@@ -7,21 +7,17 @@ class App extends React.Component {
             productId: this.props.productId,
             styleId: this.props.styleId,
             productInfo: {name: '', styles: [{name: ''}]},
-            styleInfo: {name: ''},
+            styleInfo: {name: '', price_retail: '', thumb: ''},
             mediumImages: []
         }
     }
 
     setStyleDetails(styleId) {
         styleId = Number(styleId);
-        console.log('this.state.styleId', this.state.styleId, typeof this.state.styleId);
-        console.log('styleId', styleId, typeof styleId);
         var styleInfo = this.state.productInfo.styles.filter(style => {
-            console.log('style', style);
             
             return style.id === styleId;
         })[0];
-        console.log('styleInfo', styleInfo);
 
         this.setState({
             styleId,
@@ -35,13 +31,10 @@ class App extends React.Component {
 
     }
         
-
-
     setProductInfo(productInfo) {
         var styleInfo = productInfo.styles.filter(style => {
             return style.id === this.state.styleId;
         })[0];
-        console.log('*', styleInfo)
         this.setState({
             productInfo,
             styleInfo
@@ -55,12 +48,10 @@ class App extends React.Component {
 
     displayImages() {
         $.ajax({
-          //retrieve medium sized images
           url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/${this.state.styleId}`,
           method: 'GET',
           dataType: 'json',
           success: (data) => {
-            console.log('data: ', data)
             this.setState({
               mediumImages: data
             })
@@ -70,9 +61,6 @@ class App extends React.Component {
           }
         })
       }
-
-
-
 
     render() {
         return (
