@@ -433,8 +433,107 @@ a {
 }
 /*******************************************/
 
+@media (min-width: 1025px) {
+    #main-container {
+     display: flex;   
+    }
+    
+
+    #imgs-container {
+        flex: 3 1 0%;
+        margin-top: 44px;
+        padding-left: 44px;
+        padding-right: 48px;
+    }
+
+    #info-container {
+        flex: 1 1 0%;
+        margin-top: 48px;
+        min-width: 456px;
+        max-width: 320px;
+        padding: 4px 48px 0px 24px;
+    }
+
+    img.defaultSize {
+        width: 50%;
+    }
+    
+}
+
+
 #main-container {
     border: 3px dashed greenyellow;
     max-width: 1440px;
     margin: auto;
+}
+
+#imgs-container {
+
+}
+
+#Description {
+    padding-top: 16px;
+}
+
+#Reviews {
+    padding-top: 40px;
+}
+
+
+
+/* modifying damiens */
+.styles-leftRight {
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: space-between;
+}
+
+.styles-sectionLeft {
+    flex: 3 1 auto;
+    padding-right: 48px;
+}
+
+.styles-sectionRight {
+    flex: 1 0 auto;
+}
+
+.styles-priceSale {
+
+}
+
+.styles-priceRetail {
+
+}
+
+.styles-stylePicker {
+    display: table;
+}
+
+.thumb {
+    display: table-cell;
+    padding-right: 4px;
+}
+
+.styles-btnCart, .styles-btnFavorite {
+    border-style: solid;
+    width:100%;
+    padding:16px 24px;
+    border-width: 1px;
+    margin-bottom:8px;
+    border-radius:30px;
+  }
+
+
+/* modifying abrahams */
+
+img.defaultSize {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1025px) {
+    img.defaultSize {
+        width: 50%;
+    }
 }

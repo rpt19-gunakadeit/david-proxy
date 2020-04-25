@@ -63,14 +63,16 @@ class ProductImages extends React.Component {
       <div className="defaultDisplay">
           <div className='imageBody'>
           {this.props.mediumImages.map(img => (
-            <img
-            className="defaultSize"
-            // id="modal"
-            key={img.id}
-            value={img.styleId}
-            src={img.mediumUrl}
-            onClick={this.toggleModal}
-            />
+            <div className="med-img-container">
+              <img
+              className="defaultSize"
+              // id="modal"
+              key={img.id}
+              value={img.styleId}
+              src={img.mediumUrl}
+              onClick={this.toggleModal}
+              />
+          </div>
           ))}
           </div>
         {/* <ImageModal images={modalView} show={show} handleModal={this.toggleModal} /> */}

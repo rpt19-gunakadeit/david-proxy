@@ -179,7 +179,7 @@ class App extends React.Component {
 
 
                 {/*MAIN SECTION*/}
-                <div id="main-container" className="d-f">
+                <div id="main-container">
                     <div id="imgs-container">
                         <ProductImages 
                         styleId={this.state.styleId}
@@ -192,12 +192,18 @@ class App extends React.Component {
                             productInfo={this.state.productInfo}
                             setStyleDetails={this.setStyleDetails.bind(this)}
                             setProductInfo={this.setProductInfo.bind(this)}/>
-                        <Description 
-                            productId={this.state.productId}
-                            productInfo={this.state.productInfo}
-                            styleInfo={this.state.styleInfo}/>
-                        <Reviews 
-                            productId={this.state.productId}/>
+                        <div id="Description">
+                            <Description 
+                                productId={this.state.productId}
+                                productInfo={this.state.productInfo}
+                                styleInfo={this.state.styleInfo}/>
+                        </div>
+
+                        <div id="Reviews">
+                            <Reviews 
+                                productId={this.state.productId}/>
+                        </div>
+                        
                     </div>
 
                 </div>
