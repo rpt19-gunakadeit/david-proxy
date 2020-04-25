@@ -40,11 +40,13 @@ fs.writeFileSync(reb_fullReviews_jsx_path, reb_fullReviews_jsx);
 var reb_longReview_jsx_path = '../Rebekah-Reviews-service/client/components/longReview.jsx';
 var reb_longReview_jsx = fs.readFileSync(reb_longReview_jsx_path, 'utf-8');
 reb_longReview_jsx = reb_longReview_jsx.replace("import React from 'react';", "");
+reb_longReview_jsx = reb_longReview_jsx.replace("import moment from 'moment';", "");
 fs.writeFileSync(reb_longReview_jsx_path, reb_longReview_jsx);
 //................................................................................................................................
 var reb_shortReview_jsx_path = '../Rebekah-Reviews-service/client/components/shortReview.jsx';
 var reb_shortReview_jsx = fs.readFileSync(reb_shortReview_jsx_path, 'utf-8');
 reb_shortReview_jsx = reb_shortReview_jsx.replace("import React from 'react';", "");
+reb_shortReview_jsx = reb_shortReview_jsx.replace("import moment from 'moment';", "");
 fs.writeFileSync(reb_shortReview_jsx_path, reb_shortReview_jsx);
 //................................................................................................................................
 var reb_summaryReviews_jsx_path = '../Rebekah-Reviews-service/client/components/summaryReviews.jsx';
