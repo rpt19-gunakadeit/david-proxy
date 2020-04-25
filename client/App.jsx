@@ -181,11 +181,14 @@ class App extends React.Component {
                 {/*MAIN SECTION*/}
                 <div id="main-container">
                     <div id="imgs-container">
-                        <ProductImages 
-                        styleId={this.state.styleId}
-                        mediumImages={this.state.mediumImages}/>
+                        <div id="imgs-smaller-container">
+                            <ProductImages 
+                            styleId={this.state.styleId}
+                            mediumImages={this.state.mediumImages}/>
+                        </div>
                     </div>
                     <div id="info-container">
+                        <div id="info-smaller-container">
                         <Styles 
                             productId={this.state.productId} 
                             styleInfo={this.state.styleInfo} 
@@ -203,6 +206,8 @@ class App extends React.Component {
                             <Reviews 
                                 productId={this.state.productId}/>
                         </div>
+                        </div>
+                        
                         
                     </div>
 

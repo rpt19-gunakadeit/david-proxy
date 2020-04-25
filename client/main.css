@@ -441,16 +441,23 @@ a {
 
     #imgs-container {
         flex: 3 1 0%;
+        box-sizing: border-box;
+        
+    }
+
+    #imgs-smaller-container {
         margin-top: 44px;
         padding-left: 44px;
         padding-right: 48px;
     }
 
     #info-container {
-        flex: 1 1 0%;
+        flex: 1 1 0%;  
+        box-sizing: border-box;
+    }
+
+    #info-smaller-container {
         margin-top: 48px;
-        min-width: 456px;
-        max-width: 320px;
         padding: 4px 48px 0px 24px;
     }
 
@@ -462,7 +469,6 @@ a {
 
 
 #main-container {
-    border: 3px dashed greenyellow;
     max-width: 1440px;
     margin: auto;
 }
@@ -482,6 +488,9 @@ a {
 
 
 /* modifying damiens */
+.styles-details {
+    width: 100%;
+}
 .styles-leftRight {
     display: flex;
     margin-bottom: 16px;
@@ -506,7 +515,16 @@ a {
 }
 
 .styles-stylePicker {
-    display: table;
+    
+}
+
+.size {
+    margin: 0;
+}
+
+.inventory {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 7px;
 }
 
 .thumb {
@@ -517,14 +535,37 @@ a {
 .styles-btnCart, .styles-btnFavorite {
     border-style: solid;
     width:100%;
-    padding:16px 24px;
+    padding:18px 24px;
     border-width: 1px;
     margin-bottom:8px;
     border-radius:30px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
   }
 
+  .styles-productName {
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 1.2;
+      
+  }
 
 /* modifying abrahams */
+
+
+.defaultDisplay {
+    width: 100%;
+}
+
+.imageBody {
+    width: 100%;
+}
+.med-img-container {
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block;
+}
 
 img.defaultSize {
     box-sizing: border-box;
@@ -533,7 +574,7 @@ img.defaultSize {
 }
 
 @media (min-width: 1025px) {
-    img.defaultSize {
+    .med-img-container {
         width: 50%;
     }
 }
