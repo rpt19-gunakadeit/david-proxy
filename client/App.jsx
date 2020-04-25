@@ -207,6 +207,11 @@ class App extends React.Component {
                                 productId={this.state.productId}/>
                         </div>
                         </div>
+
+                        <div id="ShippingReturns">
+                            <ShippingReturns/>
+                        </div>
+                        </div>
                         
                         
                     </div>
