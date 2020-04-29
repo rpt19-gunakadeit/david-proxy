@@ -24,7 +24,7 @@ class App extends React.Component {
             styleInfo
         }, 
             () => {
-            window.history.pushState({}, null, `http://18.144.38.149:1000/t/${this.state.productId}/${this.state.styleId}/`);
+            window.history.pushState({}, null, `http://ec2-18-144-38-149.us-west-1.compute.amazonaws.com:1000/t/${this.state.productId}/${this.state.styleId}/`);
             this.displayImages();
             }
         )
