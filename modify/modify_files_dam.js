@@ -63,7 +63,7 @@ var getProductInfo = (productId) => {
             style.stock = inventoriesPerStyle[idx]
         })
 
-        return request.getAsync(\`http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/t/` + "${productId}" + `\`);
+        return request.getAsync(\`http://18.144.38.149:3000/t/` + "${productId}" + `\`);
         
     }).then(results => {
         smallImgsUrls = JSON.parse(results.body);

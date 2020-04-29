@@ -10,6 +10,7 @@ class App extends React.Component {
             styleInfo: {name: '', price_retail: '', thumb: ''},
             mediumImages: []
         }
+        var IPAddress = `http://18.144.38.149`;
     }
 
     setStyleDetails(styleId) {
@@ -24,7 +25,7 @@ class App extends React.Component {
             styleInfo
         }, 
             () => {
-            window.history.pushState({}, null, `http://54.241.130.11:1000/t/${this.state.productId}/${this.state.styleId}/`);
+            window.history.pushState({}, null, `${IPAddress}:1000/t/${this.state.productId}/${this.state.styleId}/`);
             this.displayImages();
             }
         )
@@ -48,7 +49,7 @@ class App extends React.Component {
 
     displayImages() {
         $.ajax({
-          url: `http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:3000/${this.state.styleId}`,
+          url: `${IPAddress}:3000/${this.state.styleId}`,
           method: 'GET',
           dataType: 'json',
           success: (data) => {

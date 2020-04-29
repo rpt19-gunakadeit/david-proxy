@@ -23,7 +23,7 @@ reb_reviews_jsx = reb_reviews_jsx.replace("import ReactDOM from 'react-dom';", "
 reb_reviews_jsx = reb_reviews_jsx.replace("import $ from 'jquery';", "");
 reb_reviews_jsx = reb_reviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
 reb_reviews_jsx = reb_reviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
-reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/date',\n");
+reb_reviews_jsx = reb_reviews_jsx.replace(/url: .*\n/, "url: 'http://18.144.38.149:2000/reviews/' + this.props.productId + '/date',\n");
 reb_reviews_jsx = reb_reviews_jsx.replace("<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails}/>", "<FullReviews showAllReviews={this.showAllReviews.bind(this)} numStars={this.state.avgStars} reviews={this.state.reviews} product={this.props.productDetails} productId={this.props.productId}/>");
 reb_reviews_jsx = reb_reviews_jsx.replace("componentDidMount() {", "componentDidMount() {console.log('test', this.props.productId);");
 fs.writeFileSync(reb_reviews_jsx_path, reb_reviews_jsx);
@@ -34,7 +34,7 @@ reb_fullReviews_jsx = reb_fullReviews_jsx.replace("import React from 'react';", 
 reb_fullReviews_jsx = reb_fullReviews_jsx.replace("import $ from 'jquery';", "");
 reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const parsedUrl = new URL(window.location.href);", "");
 reb_fullReviews_jsx = reb_fullReviews_jsx.replace("const productId = parsedUrl.searchParams.get('');", "");
-reb_fullReviews_jsx = reb_fullReviews_jsx.replace(/url: .*\n/, "url: 'http://ec2-54-241-130-11.us-west-1.compute.amazonaws.com:2000/reviews/' + this.props.productId + '/' + filter,\n");
+reb_fullReviews_jsx = reb_fullReviews_jsx.replace(/url: .*\n/, "url: 'http://18.144.38.149:2000/reviews/' + this.props.productId + '/' + filter,\n");
 fs.writeFileSync(reb_fullReviews_jsx_path, reb_fullReviews_jsx);
 //................................................................................................................................
 var reb_longReview_jsx_path = '../Rebekah-Reviews-service/client/components/longReview.jsx';
