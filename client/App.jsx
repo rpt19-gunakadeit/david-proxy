@@ -25,7 +25,7 @@ class App extends React.Component {
             styleInfo
         }, 
             () => {
-            window.history.pushState({}, null, `${IPAddress}:1000/t/${this.state.productId}/${this.state.styleId}/`);
+            window.history.pushState({}, null, `${this.IPAddress}:1000/t/${this.state.productId}/${this.state.styleId}/`);
             this.displayImages();
             }
         )
@@ -49,7 +49,7 @@ class App extends React.Component {
 
     displayImages() {
         $.ajax({
-          url: `${IPAddress}:3000/${this.state.styleId}`,
+          url: `${this.IPAddress}:3000/${this.state.styleId}`,
           method: 'GET',
           dataType: 'json',
           success: (data) => {
